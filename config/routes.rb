@@ -6,12 +6,13 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   resources :employees
-  
+
   resources :employees do
     member do
       get :salary
     end
   end
+  get "/salary/metrics", to: "salary_metrics#index"
   # Defines the root path route ("/")
   # root "posts#index"
 end
