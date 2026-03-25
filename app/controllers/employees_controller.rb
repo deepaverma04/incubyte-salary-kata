@@ -1,5 +1,5 @@
 class EmployeesController < ApplicationController
-  before_action :set_employee, only: [:show, :update, :destroy]
+  before_action :set_employee, only: [:show, :update, :destroy, :salary]
 
   def index
     render json: Employee.all
@@ -29,6 +29,17 @@ class EmployeesController < ApplicationController
   def destroy
     @employee.destroy
     head :no_content
+  end
+
+  def salary
+			gross = @employee.salary
+			tds, net = case @employee.country
+                when "India" then [gross * 0.10, gross * 0.90]
+                when "United States" then [gross * 0.12, gross * 0.88]
+                else [0, gross]
+                end
+
+      render json: { employee_id: @employee.id, gross_salary: gross, tds_deduction: tds, net_salary: net }
   end
 
   private

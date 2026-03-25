@@ -1250,3 +1250,362 @@ Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 18:55:05 +0530
 ActionController::RoutingError (No route matches [GET] "/employees/1/salary"):
   
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-25 13:27:22.928790"], ["updated_at", "2026-03-25 13:27:22.928790"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 18:57:22 +0530
+  
+AbstractController::ActionNotFound (The action 'salary' could not be found for EmployeesController):
+  
+actionpack (8.0.5) lib/abstract_controller/base.rb:147:in `process'
+actionpack (8.0.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.0.5) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.5) lib/rails/engine/lazy_route_set.rb:60:in `call'
+rack (3.2.5) lib/rack/etag.rb:29:in `call'
+rack (3.2.5) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.5) lib/rack/head.rb:15:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.5) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.5) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.5) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.5) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (8.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+railties (8.0.5) lib/rails/engine.rb:535:in `call'
+rack-test (2.2.0) lib/rack/test.rb:360:in `process_request'
+rack-test (2.2.0) lib/rack/test.rb:153:in `request'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:298:in `process'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:19:in `get'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:389:in `get'
+spec/requests/salary_spec.rb:11:in `block (4 levels) in <top (required)>'
+rspec-core (3.13.6) lib/rspec/core/example.rb:263:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/example.rb:263:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example.rb:511:in `block in with_around_and_singleton_context_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:468:in `block in with_around_example_hooks'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:486:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:626:in `block in run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/example.rb:352:in `call'
+rspec-rails (8.0.4) lib/rspec/rails/adapters.rb:75:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+rspec-core (3.13.6) lib/rspec/core/example.rb:457:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/example.rb:457:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:390:in `execute_with'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:628:in `block (2 levels) in run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/example.rb:352:in `call'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:629:in `run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:486:in `run'
+rspec-core (3.13.6) lib/rspec/core/example.rb:468:in `with_around_example_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:511:in `with_around_and_singleton_context_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:259:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:653:in `block in run_examples'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:649:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:649:in `run_examples'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:614:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `block (3 levels) in run_specs'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `map'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `block (2 levels) in run_specs'
+rspec-core (3.13.6) lib/rspec/core/configuration.rb:2097:in `with_suite_hooks'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:116:in `block in run_specs'
+rspec-core (3.13.6) lib/rspec/core/reporter.rb:74:in `report'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:115:in `run_specs'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:89:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:71:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:45:in `invoke'
+rspec-core (3.13.6) exe/rspec:4:in `<top (required)>'
+vendor/bundle/ruby/3.2.0/bin/rspec:25:in `load'
+vendor/bundle/ruby/3.2.0/bin/rspec:25:in `<main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Engineer"], ["country", "United States"], ["salary", 50000.0], ["created_at", "2026-03-25 13:27:23.184915"], ["updated_at", "2026-03-25 13:27:23.184915"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 18:57:23 +0530
+  
+AbstractController::ActionNotFound (The action 'salary' could not be found for EmployeesController):
+  
+actionpack (8.0.5) lib/abstract_controller/base.rb:147:in `process'
+actionpack (8.0.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.0.5) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.5) lib/rails/engine/lazy_route_set.rb:60:in `call'
+rack (3.2.5) lib/rack/etag.rb:29:in `call'
+rack (3.2.5) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.5) lib/rack/head.rb:15:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.5) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.5) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.5) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.5) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (8.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+railties (8.0.5) lib/rails/engine.rb:535:in `call'
+rack-test (2.2.0) lib/rack/test.rb:360:in `process_request'
+rack-test (2.2.0) lib/rack/test.rb:153:in `request'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:298:in `process'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:19:in `get'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:389:in `get'
+spec/requests/salary_spec.rb:21:in `block (4 levels) in <top (required)>'
+rspec-core (3.13.6) lib/rspec/core/example.rb:263:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/example.rb:263:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example.rb:511:in `block in with_around_and_singleton_context_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:468:in `block in with_around_example_hooks'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:486:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:626:in `block in run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/example.rb:352:in `call'
+rspec-rails (8.0.4) lib/rspec/rails/adapters.rb:75:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+rspec-core (3.13.6) lib/rspec/core/example.rb:457:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/example.rb:457:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:390:in `execute_with'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:628:in `block (2 levels) in run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/example.rb:352:in `call'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:629:in `run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:486:in `run'
+rspec-core (3.13.6) lib/rspec/core/example.rb:468:in `with_around_example_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:511:in `with_around_and_singleton_context_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:259:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:653:in `block in run_examples'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:649:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:649:in `run_examples'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:614:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `block (3 levels) in run_specs'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `map'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `block (2 levels) in run_specs'
+rspec-core (3.13.6) lib/rspec/core/configuration.rb:2097:in `with_suite_hooks'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:116:in `block in run_specs'
+rspec-core (3.13.6) lib/rspec/core/reporter.rb:74:in `report'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:115:in `run_specs'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:89:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:71:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:45:in `invoke'
+rspec-core (3.13.6) exe/rspec:4:in `<top (required)>'
+vendor/bundle/ruby/3.2.0/bin/rspec:25:in `load'
+vendor/bundle/ruby/3.2.0/bin/rspec:25:in `<main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 50000.0], ["created_at", "2026-03-25 13:27:23.375297"], ["updated_at", "2026-03-25 13:27:23.375297"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 18:57:23 +0530
+  
+AbstractController::ActionNotFound (The action 'salary' could not be found for EmployeesController):
+  
+actionpack (8.0.5) lib/abstract_controller/base.rb:147:in `process'
+actionpack (8.0.5) lib/action_controller/metal.rb:252:in `dispatch'
+actionpack (8.0.5) lib/action_controller/metal.rb:335:in `dispatch'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:67:in `dispatch'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:50:in `serve'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:53:in `block in serve'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:133:in `block in find_routes'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:126:in `each'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:126:in `find_routes'
+actionpack (8.0.5) lib/action_dispatch/journey/router.rb:34:in `serve'
+actionpack (8.0.5) lib/action_dispatch/routing/route_set.rb:908:in `call'
+railties (8.0.5) lib/rails/engine/lazy_route_set.rb:60:in `call'
+rack (3.2.5) lib/rack/etag.rb:29:in `call'
+rack (3.2.5) lib/rack/conditional_get.rb:31:in `call'
+rack (3.2.5) lib/rack/head.rb:15:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/callbacks.rb:31:in `block in call'
+activesupport (8.0.5) lib/active_support/callbacks.rb:100:in `run_callbacks'
+actionpack (8.0.5) lib/action_dispatch/middleware/callbacks.rb:30:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/actionable_exceptions.rb:18:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/debug_exceptions.rb:31:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/show_exceptions.rb:32:in `call'
+railties (8.0.5) lib/rails/rack/logger.rb:41:in `call_app'
+railties (8.0.5) lib/rails/rack/logger.rb:29:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/remote_ip.rb:96:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/request_id.rb:34:in `call'
+rack (3.2.5) lib/rack/runtime.rb:24:in `call'
+activesupport (8.0.5) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/executor.rb:16:in `call'
+actionpack (8.0.5) lib/action_dispatch/middleware/static.rb:27:in `call'
+rack (3.2.5) lib/rack/sendfile.rb:131:in `call'
+railties (8.0.5) lib/rails/engine.rb:535:in `call'
+rack-test (2.2.0) lib/rack/test.rb:360:in `process_request'
+rack-test (2.2.0) lib/rack/test.rb:153:in `request'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:298:in `process'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:19:in `get'
+actionpack (8.0.5) lib/action_dispatch/testing/integration.rb:389:in `get'
+spec/requests/salary_spec.rb:31:in `block (4 levels) in <top (required)>'
+rspec-core (3.13.6) lib/rspec/core/example.rb:263:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/example.rb:263:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example.rb:511:in `block in with_around_and_singleton_context_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:468:in `block in with_around_example_hooks'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:486:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:626:in `block in run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/example.rb:352:in `call'
+rspec-rails (8.0.4) lib/rspec/rails/adapters.rb:75:in `block (2 levels) in <module:MinitestLifecycleAdapter>'
+rspec-core (3.13.6) lib/rspec/core/example.rb:457:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/example.rb:457:in `instance_exec'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:390:in `execute_with'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:628:in `block (2 levels) in run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/example.rb:352:in `call'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:629:in `run_around_example_hooks_for'
+rspec-core (3.13.6) lib/rspec/core/hooks.rb:486:in `run'
+rspec-core (3.13.6) lib/rspec/core/example.rb:468:in `with_around_example_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:511:in `with_around_and_singleton_context_hooks'
+rspec-core (3.13.6) lib/rspec/core/example.rb:259:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:653:in `block in run_examples'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:649:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:649:in `run_examples'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:614:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `block in run'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `map'
+rspec-core (3.13.6) lib/rspec/core/example_group.rb:615:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `block (3 levels) in run_specs'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `map'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:121:in `block (2 levels) in run_specs'
+rspec-core (3.13.6) lib/rspec/core/configuration.rb:2097:in `with_suite_hooks'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:116:in `block in run_specs'
+rspec-core (3.13.6) lib/rspec/core/reporter.rb:74:in `report'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:115:in `run_specs'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:89:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:71:in `run'
+rspec-core (3.13.6) lib/rspec/core/runner.rb:45:in `invoke'
+rspec-core (3.13.6) exe/rspec:4:in `<top (required)>'
+vendor/bundle/ruby/3.2.0/bin/rspec:25:in `load'
+vendor/bundle/ruby/3.2.0/bin/rspec:25:in `<main>'
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-25 13:29:29.326621"], ["updated_at", "2026-03-25 13:29:29.326621"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 18:59:29 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.4ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Engineer"], ["country", "United States"], ["salary", 50000.0], ["created_at", "2026-03-25 13:29:29.355826"], ["updated_at", "2026-03-25 13:29:29.355826"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 18:59:29 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 50000.0], ["created_at", "2026-03-25 13:29:29.361794"], ["updated_at", "2026-03-25 13:29:29.361794"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 18:59:29 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-25 13:30:40.666688"], ["updated_at", "2026-03-25 13:30:40.666688"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 19:00:40 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 6ms (Views: 0.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Engineer"], ["country", "United States"], ["salary", 50000.0], ["created_at", "2026-03-25 13:30:40.695572"], ["updated_at", "2026-03-25 13:30:40.695572"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 19:00:40 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 50000.0], ["created_at", "2026-03-25 13:30:40.700584"], ["updated_at", "2026-03-25 13:30:40.700584"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 19:00:40 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.3ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-25 13:30:56.431693"], ["updated_at", "2026-03-25 13:30:56.431693"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 19:00:56 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 7ms (Views: 0.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.8ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Engineer"], ["country", "United States"], ["salary", 50000.0], ["created_at", "2026-03-25 13:30:56.460979"], ["updated_at", "2026-03-25 13:30:56.460979"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 19:00:56 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 50000.0], ["created_at", "2026-03-25 13:30:56.468096"], ["updated_at", "2026-03-25 13:30:56.468096"]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-25 19:00:56 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.2ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.2ms | ActiveRecord: 0.2ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

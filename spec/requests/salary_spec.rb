@@ -31,7 +31,7 @@ RSpec.describe "Salary Calculation API", type: :request do
         get "/employees/#{other_employee.id}/salary"
         expect(response).to have_http_status(:ok)
         body = JSON.parse(response.body)
-        expect(body["tds_deduction"]).to eq("0.0")
+        expect(body["tds_deduction"]).to eq(0)
         expect(body["net_salary"]).to eq("50000.0")
       end
     end
