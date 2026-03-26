@@ -7,9 +7,9 @@ class SalaryMetricsService
   def call
     return error_response if invalid_params?
     return error_response("Provide either country or job_title, not both") if both_params?
-
     return country_metrics if @country.present?
-    return job_title_metrics if @job_title.present?
+
+    job_title_metrics
   end
 
   private
@@ -28,6 +28,7 @@ class SalaryMetricsService
 
   def country_metrics
     employees = Employee.where(country: @country)
+
     {
       data: {
         minimum_salary: employees.minimum(:salary)&.to_s,
@@ -40,6 +41,7 @@ class SalaryMetricsService
 
   def job_title_metrics
     employees = Employee.where(job_title: @job_title)
+
     {
       data: {
         average_salary: employees.average(:salary)&.to_s
