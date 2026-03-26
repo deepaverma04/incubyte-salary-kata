@@ -4179,3 +4179,183 @@ Processing by EmployeesController#salary as HTML
   [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
 Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
   [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Started POST "/employees" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"full_name"=>"Deepa Verma", "job_title"=>"Engineer", "country"=>"India", "salary"=>"50000"}}
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa Verma"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.558008"], ["updated_at", "2026-03-26 05:42:42.558008"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 201 Created in 5ms (Views: 0.3ms | ActiveRecord: 0.4ms (1 query, 0 cached) | GC: 0.2ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+Started POST "/employees" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#create as HTML
+  Parameters: {"employee"=>{"full_name"=>""}}
+Completed 422 Unprocessable Content in 1ms (Views: 0.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.566358"], ["updated_at", "2026-03-26 05:42:42.566358"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#index as HTML
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees"[0m
+Completed 200 OK in 2ms (Views: 0.8ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.572395"], ["updated_at", "2026-03-26 05:42:42.572395"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 5ms (Views: 0.3ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 3.3ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (3.5ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.589715"], ["updated_at", "2026-03-26 05:42:42.589715"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started PUT "/employees/1" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#update as HTML
+  Parameters: {"employee"=>{"full_name"=>"Deepa Verma"}, "id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Update (0.2ms)[0m  [1m[33mUPDATE "employees" SET "full_name" = ?, "updated_at" = ? WHERE "employees"."id" = ?[0m  [["full_name", "Deepa Verma"], ["updated_at", "2026-03-26 05:42:42.598844"], ["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.4ms (2 queries, 0 cached) | GC: 2.8ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.611804"], ["updated_at", "2026-03-26 05:42:42.611804"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started DELETE "/employees/1" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#destroy as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Destroy (2.3ms)[0m  [1m[31mDELETE FROM "employees" WHERE "employees"."id" = ?[0m  [["id", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Completed 204 No Content in 4ms (ActiveRecord: 2.4ms (2 queries, 0 cached) | GC: 1.9ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.4ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.632816"], ["updated_at", "2026-03-26 05:42:42.632816"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Raj"], ["job_title", "Engineer"], ["country", "India"], ["salary", 70000.0], ["created_at", "2026-03-26 05:42:42.636509"], ["updated_at", "2026-03-26 05:42:42.636509"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Manager"], ["country", "United States"], ["salary", 90000.0], ["created_at", "2026-03-26 05:42:42.639832"], ["updated_at", "2026-03-26 05:42:42.639832"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 60000.0], ["created_at", "2026-03-26 05:42:42.642770"], ["updated_at", "2026-03-26 05:42:42.642770"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/salary/metrics?country=India" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by SalaryMetricsController#index as HTML
+  Parameters: {"country"=>"India"}
+  [1m[36mEmployee Minimum (0.7ms)[0m  [1m[34mSELECT MIN("employees"."salary") FROM "employees" WHERE "employees"."country" = ?[0m  [["country", "India"]]
+  [1m[36mEmployee Maximum (0.1ms)[0m  [1m[34mSELECT MAX("employees"."salary") FROM "employees" WHERE "employees"."country" = ?[0m  [["country", "India"]]
+  [1m[36mEmployee Average (0.1ms)[0m  [1m[34mSELECT AVG("employees"."salary") FROM "employees" WHERE "employees"."country" = ?[0m  [["country", "India"]]
+Completed 200 OK in 5ms (Views: 0.2ms | ActiveRecord: 0.9ms (3 queries, 0 cached) | GC: 2.2ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.656971"], ["updated_at", "2026-03-26 05:42:42.656971"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Raj"], ["job_title", "Engineer"], ["country", "India"], ["salary", 70000.0], ["created_at", "2026-03-26 05:42:42.658029"], ["updated_at", "2026-03-26 05:42:42.658029"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Manager"], ["country", "United States"], ["salary", 90000.0], ["created_at", "2026-03-26 05:42:42.658930"], ["updated_at", "2026-03-26 05:42:42.658930"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 60000.0], ["created_at", "2026-03-26 05:42:42.660485"], ["updated_at", "2026-03-26 05:42:42.660485"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/salary/metrics?job_title=Engineer" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by SalaryMetricsController#index as HTML
+  Parameters: {"job_title"=>"Engineer"}
+  [1m[36mEmployee Average (0.1ms)[0m  [1m[34mSELECT AVG("employees"."salary") FROM "employees" WHERE "employees"."job_title" = ?[0m  [["job_title", "Engineer"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.5ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.665898"], ["updated_at", "2026-03-26 05:42:42.665898"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Raj"], ["job_title", "Engineer"], ["country", "India"], ["salary", 70000.0], ["created_at", "2026-03-26 05:42:42.667265"], ["updated_at", "2026-03-26 05:42:42.667265"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Manager"], ["country", "United States"], ["salary", 90000.0], ["created_at", "2026-03-26 05:42:42.668187"], ["updated_at", "2026-03-26 05:42:42.668187"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 60000.0], ["created_at", "2026-03-26 05:42:42.669087"], ["updated_at", "2026-03-26 05:42:42.669087"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/salary/metrics" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by SalaryMetricsController#index as HTML
+Completed 400 Bad Request in 0ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.673247"], ["updated_at", "2026-03-26 05:42:42.673247"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Raj"], ["job_title", "Engineer"], ["country", "India"], ["salary", 70000.0], ["created_at", "2026-03-26 05:42:42.674778"], ["updated_at", "2026-03-26 05:42:42.674778"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Manager"], ["country", "United States"], ["salary", 90000.0], ["created_at", "2026-03-26 05:42:42.675721"], ["updated_at", "2026-03-26 05:42:42.675721"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.1ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 60000.0], ["created_at", "2026-03-26 05:42:42.676427"], ["updated_at", "2026-03-26 05:42:42.676427"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/salary/metrics?country=Australia" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by SalaryMetricsController#index as HTML
+  Parameters: {"country"=>"Australia"}
+  [1m[36mEmployee Minimum (0.1ms)[0m  [1m[34mSELECT MIN("employees"."salary") FROM "employees" WHERE "employees"."country" = ?[0m  [["country", "Australia"]]
+  [1m[36mEmployee Maximum (0.0ms)[0m  [1m[34mSELECT MAX("employees"."salary") FROM "employees" WHERE "employees"."country" = ?[0m  [["country", "Australia"]]
+  [1m[36mEmployee Average (0.0ms)[0m  [1m[34mSELECT AVG("employees"."salary") FROM "employees" WHERE "employees"."country" = ?[0m  [["country", "Australia"]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (3 queries, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Deepa"], ["job_title", "Engineer"], ["country", "India"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.681316"], ["updated_at", "2026-03-26 05:42:42.681316"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.2ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "John"], ["job_title", "Engineer"], ["country", "United States"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.685401"], ["updated_at", "2026-03-26 05:42:42.685401"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.1ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[36mBEGIN deferred TRANSACTION[0m
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mSAVEPOINT active_record_1[0m
+  [1m[36mEmployee Create (0.3ms)[0m  [1m[32mINSERT INTO "employees" ("full_name", "job_title", "country", "salary", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?, ?) RETURNING "id"[0m  [["full_name", "Marie"], ["job_title", "Engineer"], ["country", "France"], ["salary", 50000.0], ["created_at", "2026-03-26 05:42:42.689915"], ["updated_at", "2026-03-26 05:42:42.689915"]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mRELEASE SAVEPOINT active_record_1[0m
+Started GET "/employees/1/salary" for 127.0.0.1 at 2026-03-26 11:12:42 +0530
+Processing by EmployeesController#salary as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mEmployee Load (0.1ms)[0m  [1m[34mSELECT "employees".* FROM "employees" WHERE "employees"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 1ms (Views: 0.1ms | ActiveRecord: 0.1ms (1 query, 0 cached) | GC: 0.0ms)
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[31mROLLBACK TRANSACTION[0m

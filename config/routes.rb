@@ -11,8 +11,8 @@ Rails.application.routes.draw do
     end
   end
 
-  get '/salary/metrics', to: 'salary_metrics#index'
-  
+  get "/salary/metrics", to: "salary_metrics#index"
+
   # Defines the root path route ("/")
   # root "posts#index"
 end
