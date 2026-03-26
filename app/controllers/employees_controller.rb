@@ -32,20 +32,22 @@ class EmployeesController < ApplicationController
   end
 
   def salary
-			gross = @employee.salary
-			tds, net = case @employee.country
-                when "India" then [gross * 0.10, gross * 0.90]
-                when "United States" then [gross * 0.12, gross * 0.88]
-                else [0, gross]
-                end
+    gross = @employee.salary
+    tds, net = case @employee.country
+               when "India" then [gross * 0.10, gross * 0.90]
+               when "United States" then [gross * 0.12, gross * 0.88]
+               else [0, gross]
+               end
 
-      render json: { employee_id: @employee.id, gross_salary: gross, tds_deduction: tds, net_salary: net }
+    render json: { employee_id: @employee.id, gross_salary: gross, tds_deduction: tds, net_salary: net }
   end
 
   private
 
   def set_employee
     @employee = Employee.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    render json: { error: "Employee not found" }, status: :not_found
   end
 
   def employee_params
